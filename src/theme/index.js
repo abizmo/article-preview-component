@@ -16,11 +16,11 @@ export default {
   font: {
     size: {
       xs: {
-        normal: '0.8125rem',
+        normal: '.8125rem',
         big: '1rem',
       },
       lg: {
-        normal: '0.8125rem',
+        normal: '.8125rem',
         big: '1.25rem',
       },
     },
@@ -31,7 +31,7 @@ export default {
   },
   sizes: {
     br: '.5rem',
-    mobile: '20.438rem',
+    mobile: '20.4375rem',
     laptop: '45.625rem',
     full: '100%',
   },
