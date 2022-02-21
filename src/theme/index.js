@@ -1,13 +1,17 @@
+const breakpoints = {
+  lg: '768px',
+};
+
 export default {
-  breakpoint: {
-    xs: '320px',
-    lg: '1110px',
-  },
   color: {
     'blue-900': 'hsl(217, 19%, 35%)',
     'blue-700': 'hsl(214, 17%, 51%)',
     'blue-500': 'hsl(212, 23%, 69%)',
     'blue-300': 'hsl(210, 46%, 95%)',
+    'blue-100': 'hsl(210, 46%, 100%)',
+  },
+  devices: {
+    laptop: `@media(min-width: ${breakpoints.lg})`,
   },
   font: {
     size: {
@@ -25,5 +29,10 @@ export default {
       bold: 700,
     },
   },
-  sizes: {},
+  sizes: {
+    br: '.5rem',
+    mobile: '20.438rem',
+    laptop: '45.625rem',
+    full: '100%',
+  },
 };
