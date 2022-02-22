@@ -3,21 +3,26 @@ import React from 'react';
 
 import Card from '../Card';
 
+const body = 'Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.';
+const title = 'Shift the overall look and feel by adding these wonderful touches to furniture in your home';
+
 const ArticlePreview = () => (
   <Card>
     <Card.Media src="/images/drawers.jpg" />
+    <Card.Group>
+      <Card.Content body={body} title={title} />
+    </Card.Group>
   </Card>
 );
+
 // const ArticlePreview = () => (
 //   <div className="card">
 //     <div className="card-media" role="img" />
 //     <div>
 //       <div className="card-content">
 //         <h1>
-//           Shift the overall look and feel by adding these wonderful touches to furniture in your home
 //         </h1>
 //         <p>
-//           Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.
 //         </p>
 //       </div>
 //       <div className="card-footer">

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Media } from './styles/card';
+import {
+  Body, Container, Group, Media, Title,
+} from './styles/card';
 
 const Card = ({ children }) => (
   <Container>
@@ -8,18 +10,36 @@ const Card = ({ children }) => (
   </Container>
 );
 
-Card.Media = ({ src }) => <Media src={src} />;
-
 Card.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-Card.Media.propTypes = {
-  src: PropTypes.string.isRequired,
+Card.Content = ({ body, title }) => (
+  <Group noPaddingLaptop>
+    <Title>{title}</Title>
+    <Body>{body}</Body>
+  </Group>
+);
+
+Card.Content.propTypes = {
+  body: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
+
+Card.Group = ({ children }) => (
+  <Group noMargin noMarginLaptop noPadding>
+    {children}
+  </Group>
+);
 
 Card.Group.propTypes = {
   children: PropTypes.node.isRequired,
+};
+
+Card.Media = ({ src }) => <Media src={src} />;
+
+Card.Media.propTypes = {
+  src: PropTypes.string.isRequired,
 };
 
 export default Card;

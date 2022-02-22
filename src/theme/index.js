@@ -15,11 +15,11 @@ export default {
   },
   font: {
     size: {
-      xs: {
+      mobile: {
         normal: '.8125rem',
         big: '1rem',
       },
-      lg: {
+      laptop: {
         normal: '.8125rem',
         big: '1.25rem',
       },
