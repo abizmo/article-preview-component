@@ -59,3 +59,21 @@ export const Body = styled.p(({ theme }) => ({
     fontSize: theme.font.size.laptop.normal,
   },
 }));
+
+export const Footer = styled.div(({ theme }) => ({
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  padding: '.75rem 2rem',
+  [theme.devices.laptop]: {
+    padding: '.75rem 0',
+  },
+}));
+
+export const Share = styled.button(({ theme }) => ({
+  border: 'none',
+  borderRadius: theme.sizes.brCircle,
+  height: '2em',
+  width: '2em',
+}));

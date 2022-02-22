@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Body, Container, Group, Media, Title,
+  Body, Container, Footer, Group, Media, Share, Title,
 } from './styles/card';
 
 const Card = ({ children }) => (
@@ -41,6 +41,22 @@ Card.Media = ({ src }) => <Media src={src} />;
 Card.Media.propTypes = {
   src: PropTypes.string.isRequired,
 };
+
+Card.Footer = ({ children }) => (
+  <Footer>
+    {children}
+  </Footer>
+);
+
+Card.Footer.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+Card.Share = () => (
+  <Share type="button">
+    <img src="./images/icon-share.svg" alt="share" />
+  </Share>
+);
 
 export default Card;
 

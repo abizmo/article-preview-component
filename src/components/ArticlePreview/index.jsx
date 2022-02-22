@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 
 import Card from '../Card';
@@ -11,6 +10,10 @@ const ArticlePreview = () => (
     <Card.Media src="./images/drawers.jpg" />
     <Card.Group>
       <Card.Content body={body} title={title} />
+      <Card.Footer>
+        <h1>Meta</h1>
+        <Card.Share />
+      </Card.Footer>
     </Card.Group>
   </Card>
 );

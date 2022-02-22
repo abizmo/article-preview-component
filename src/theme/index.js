@@ -31,6 +31,7 @@ export default {
   },
   sizes: {
     br: '.5rem',
+    brCircle: '50%',
     mobile: '20.4375rem',
     laptop: '45.625rem',
     full: '100%',
