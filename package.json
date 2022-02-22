@@ -1,6 +1,5 @@
 {
   "name": "article-preview-component",
-  "homepage": "http://abizmo.github.io/article-preview-component",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
