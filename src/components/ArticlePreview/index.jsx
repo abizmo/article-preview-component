@@ -8,7 +8,7 @@ const title = 'Shift the overall look and feel by adding these wonderful touches
 
 const ArticlePreview = () => (
   <Card>
-    <Card.Media src="/images/drawers.jpg" />
+    <Card.Media src="./images/drawers.jpg" />
     <Card.Group>
       <Card.Content body={body} title={title} />
     </Card.Group>
