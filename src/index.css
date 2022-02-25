@@ -7,7 +7,7 @@
 
 body {
   background-color: hsl(213, 44%, 95%);
-  font-family: sans-serif;
+  font-family: 'Manrope', sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
