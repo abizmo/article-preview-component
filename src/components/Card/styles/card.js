@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div(({ theme }) => ({
   backgroundColor: theme.color['blue-100'],
   borderRadius: theme.sizes.br,
+  boxShadow: 'rgba(0 0 0 / 0.15) 12px 12px 25px -6px',
+  // boxShadow: '20px 20px 30px rgb(0 0 0 / 15%)',
   overflow: 'hidden',
   width: theme.sizes.mobile,
   [theme.devices.laptop]: {
@@ -11,12 +13,9 @@ export const Container = styled.div(({ theme }) => ({
   },
 }));
 
-export const Media = styled.div(({ src, theme }) => ({
-  backgroundImage: `url('${src}')`,
-  backgroundSize: 'cover',
-  height: '12.5rem',
+export const Media = styled.img(({ theme }) => ({
   marginBottom: '2rem',
-  width: theme.full,
+  width: theme.sizes.full,
   [theme.devices.laptop]: {
     height: '17.5rem',
     marginBottom: '0',
@@ -29,11 +28,11 @@ export const Group = styled.div(({
   margin, lgMargin, padding, lgPadding, theme,
 }) => ({
   flex: 1,
-  margin: margin || 0,
-  padding: padding || 0,
+  margin,
+  padding,
   [theme.devices.laptop]: {
-    margin: lgMargin || 0,
-    padding: lgPadding || 0,
+    margin: lgMargin,
+    padding: lgPadding,
   },
 }));
 

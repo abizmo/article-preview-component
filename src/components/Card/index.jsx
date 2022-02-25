@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  useState, useContext, createContext, useMemo,
+} from 'react';
 import PropTypes from 'prop-types';
 import {
   Author,
@@ -6,18 +8,28 @@ import {
   Body, Container, Date, Footer, Group, Media, Meta, Share, Title,
 } from './styles/card';
 
-const Card = ({ children }) => (
-  <Container>
-    {children}
-  </Container>
-);
+const ShareContext = createContext();
+
+const Card = ({ children }) => {
+  const [showShare, setShowShare] = useState(false);
+
+  const value = useMemo(() => ({ showShare, setShowShare }), []);
+
+  return (
+    <ShareContext.Provider value={value}>
+      <Container>
+        {children}
+      </Container>
+    </ShareContext.Provider>
+  );
+};
 
 Card.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
 Card.Content = ({ body, title }) => (
-  <Group margin="0 0 1rem" lgMargin="0 0 .5rem" padding=".25rem 2rem">
+  <Group margin="0 0 1rem" lgMargin="0 0 .5rem" padding=".25rem 2rem" lgPadding="0">
     <Title>{title}</Title>
     <Body>{body}</Body>
   </Group>
@@ -38,10 +50,17 @@ Card.Group = ({
 
 Card.Group.propTypes = {
   children: PropTypes.node.isRequired,
-  margin: PropTypes.string.isRequired,
-  lgMargin: PropTypes.string.isRequired,
-  padding: PropTypes.string.isRequired,
-  lgPadding: PropTypes.string.isRequired,
+  margin: PropTypes.string,
+  lgMargin: PropTypes.string,
+  padding: PropTypes.string,
+  lgPadding: PropTypes.string,
+};
+
+Card.Group.defaultProps = {
+  margin: '0',
+  lgMargin: '0',
+  padding: '0',
+  lgPadding: '0',
 };
 
 Card.Media = ({ src }) => <Media src={src} />;
@@ -60,11 +79,15 @@ Card.Footer.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-Card.Share = () => (
-  <Share type="button">
-    <img src="./images/icon-share.svg" alt="share" />
-  </Share>
-);
+Card.Share = () => {
+  const { setShowShare } = useContext(ShareContext);
+
+  return (
+    <Share type="button" onClick={setShowShare}>
+      <img src="./images/icon-share.svg" alt="share" />
+    </Share>
+  );
+};
 
 Card.Meta = ({ children }) => (
   <Meta>
@@ -103,20 +126,3 @@ Card.Date.propTypes = {
 };
 
 export default Card;
-
-/*
-<Card>
-  <Card.media src="" />
-  <Card.group>
-    <Card.content>
-      <Card.title>
-      <Card.body>
-    <Card.Footer>
-      <Card.meta>
-        <Card.avatar>
-        <Card.group>
-          <Card.author>
-          <Card.date>
-      <Card.button>
-
-*/

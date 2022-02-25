@@ -6,6 +6,7 @@
 }
 
 body {
+  background-color: hsl(213, 44%, 95%);
   font-family: sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -18,4 +19,10 @@ body {
   min-height: 100vh;
   justify-content: space-between;
   width: 100vw;
+}
+
+main {
+  display: grid;
+  flex: 1;
+  place-items: center;
 }
