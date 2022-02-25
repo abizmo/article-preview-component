@@ -1,11 +1,11 @@
 import React, {
-  useState, useContext, createContext, useMemo,
+  useState, useContext, createContext,
 } from 'react';
 import PropTypes from 'prop-types';
 import {
   Author,
   Avatar,
-  Body, Container, Date, Footer, Group, Media, Meta, Share, Title,
+  Body, Container, Date, Footer, Group, Media, Meta, Button, Title, Share, Icon, Label,
 } from './styles/card';
 
 const ShareContext = createContext();
@@ -13,7 +13,8 @@ const ShareContext = createContext();
 const Card = ({ children }) => {
   const [showShare, setShowShare] = useState(false);
 
-  const value = useMemo(() => ({ showShare, setShowShare }), []);
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
+  const value = { showShare, setShowShare };
 
   return (
     <ShareContext.Provider value={value}>
@@ -69,23 +70,45 @@ Card.Media.propTypes = {
   src: PropTypes.string.isRequired,
 };
 
-Card.Footer = ({ children }) => (
-  <Footer>
-    {children}
-  </Footer>
-);
+Card.Footer = ({ children }) => {
+  const { showShare, setShowShare } = useContext(ShareContext);
+
+  return (
+    <Footer>
+      {children}
+      <Share className={showShare && 'show'}>
+        <Group style={{
+          alignItems: 'center',
+          display: 'flex',
+          gap: '1.25rem',
+        }}
+        >
+          <Label>Share</Label>
+          <Group style={{ display: 'flex', gap: '1rem' }}>
+            <Icon src="./images/icon-twitter.svg" />
+            <Icon src="./images/icon-facebook.svg" />
+            <Icon src="./images/icon-pinterest.svg" />
+          </Group>
+        </Group>
+        <Button id="back" type="button" onClick={() => setShowShare(false)}>
+          <img src="./images/icon-share.svg" alt="share" />
+        </Button>
+      </Share>
+    </Footer>
+  );
+};
 
 Card.Footer.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-Card.Share = () => {
+Card.Button = () => {
   const { setShowShare } = useContext(ShareContext);
 
   return (
-    <Share type="button" onClick={setShowShare}>
+    <Button type="button" onClick={() => setShowShare((prev) => setShowShare(!prev))}>
       <img src="./images/icon-share.svg" alt="share" />
-    </Share>
+    </Button>
   );
 };
 

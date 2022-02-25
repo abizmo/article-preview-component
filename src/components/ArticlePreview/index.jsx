@@ -22,7 +22,7 @@ const ArticlePreview = () => (
             </Card.Date>
           </Card.Group>
         </Card.Meta>
-        <Card.Share />
+        <Card.Button />
       </Card.Footer>
     </Card.Group>
   </Card>
