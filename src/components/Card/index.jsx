@@ -91,7 +91,7 @@ Card.Footer = ({ children }) => {
             <Icon src="./images/icon-pinterest.svg" alt="pinterest" />
           </Group>
         </Group>
-        <Button id="back" type="button" onClick={() => setShowShare(false)}>
+        <Button id="back" type="button" onClick={() => setShowShare(false)} aria-label="share">
           <img src="./images/icon-share.svg" alt="share" />
         </Button>
       </Share>
@@ -107,7 +107,7 @@ Card.Button = () => {
   const { showShare, setShowShare } = useContext(ShareContext);
 
   return (
-    <Button className={showShare && 'active'} type="button" onClick={() => setShowShare((prev) => setShowShare(!prev))}>
+    <Button className={showShare && 'active'} type="button" onClick={() => setShowShare((prev) => setShowShare(!prev))} aria-label="share">
       <IconShare />
     </Button>
   );
