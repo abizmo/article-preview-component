@@ -7,6 +7,7 @@ import {
   Avatar,
   Body, Container, Date, Footer, Group, Media, Meta, Button, Title, Share, Icon, Label,
 } from './styles/card';
+import { ReactComponent as IconShare } from '../../assets/icon-share.svg';
 
 const ShareContext = createContext();
 
@@ -103,11 +104,11 @@ Card.Footer.propTypes = {
 };
 
 Card.Button = () => {
-  const { setShowShare } = useContext(ShareContext);
+  const { showShare, setShowShare } = useContext(ShareContext);
 
   return (
-    <Button type="button" onClick={() => setShowShare((prev) => setShowShare(!prev))}>
-      <img src="./images/icon-share.svg" alt="share" />
+    <Button className={showShare && 'active'} type="button" onClick={() => setShowShare((prev) => setShowShare(!prev))}>
+      <IconShare />
     </Button>
   );
 };

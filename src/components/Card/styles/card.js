@@ -84,8 +84,16 @@ export const Footer = styled.div(({ theme }) => ({
 export const Button = styled.button(({ theme }) => ({
   border: 'none',
   borderRadius: theme.sizes.brCircle,
+  cursor: 'pointer',
   height: '2rem',
   width: '2rem',
+  '&.active': {
+    backgroundColor: theme.color['blue-700'],
+    outline: 'none',
+    '& path': {
+      fill: theme.color['blue-100'],
+    },
+  },
 }));
 
 export const Meta = styled.div(({ theme }) => ({
