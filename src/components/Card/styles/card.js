@@ -137,13 +137,28 @@ export const Share = styled.div(({ theme }) => ({
   width: '100%',
   [theme.devices.laptop]: {
     borderRadius: theme.sizes.br,
-    left: '60%',
-    top: '-100%',
+    left: '50%',
+    top: '-110%',
+    transform: 'translateX(19%)',
     width: 'initial',
+    '&:before': {
+      content: '""',
+      position: 'absolute',
+      bottom: '-20px',
+      left: '50%',
+      transform: 'translateX(-10px)',
+      width: '0',
+      height: '0',
+      borderLeft: '20px solid transparent',
+      borderRight: '20px solid transparent',
+      borderTop: `20px solid ${theme.color['blue-900']}`,
+    },
   },
 }));
 
-export const Icon = styled.img``;
+export const Icon = styled.img`
+  color: theme.color['blue-300'],
+`;
 
 export const Label = styled.p`
   display: inline;
