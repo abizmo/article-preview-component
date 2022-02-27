@@ -42,6 +42,7 @@ export const Group = styled.div(({
 }));
 
 export const Title = styled.h1(({ theme }) => ({
+  color: theme.color['blue-900'],
   fontSize: theme.font.size.mobile.big,
   fontWeight: theme.font.weight.bold,
   letterSpacing: '.01em',
@@ -54,6 +55,7 @@ export const Title = styled.h1(({ theme }) => ({
 }));
 
 export const Body = styled.p(({ theme }) => ({
+  color: theme.color['blue-700'],
   fontSize: theme.font.size.mobile.normal,
   fontWeight: theme.font.weight.regular,
   letterSpacing: '.01em',
@@ -110,6 +112,7 @@ export const Avatar = styled.img(({ theme }) => ({
 }));
 
 export const Author = styled.h2(({ theme }) => ({
+  color: theme.color['blue-900'],
   fontSize: theme.font.size.mobile.normal,
   fontWeight: theme.font.weight.bold,
   letterSpacing: '.01em',
@@ -117,6 +120,7 @@ export const Author = styled.h2(({ theme }) => ({
 }));
 
 export const Date = styled.p(({ theme }) => ({
+  color: theme.color['blue-700'],
   fontSize: theme.font.size.mobile.normal,
   fontWeight: theme.font.weight.regular,
   letterSpacing: '.01em',
@@ -127,7 +131,6 @@ export const Share = styled.div(({ theme }) => ({
   backgroundColor: theme.color['blue-900'],
   borderBottomLeftRadius: theme.sizes.br,
   borderBottomRightRadius: theme.sizes.br,
-  color: theme.color['blue-300'],
   display: 'flex',
   height: '0',
   justifyContent: 'space-between',
@@ -147,7 +150,7 @@ export const Share = styled.div(({ theme }) => ({
     borderRadius: theme.sizes.br,
     left: '50%',
     top: '-110%',
-    transform: 'translateX(19%)',
+    transform: 'translateX(15%)',
     width: 'initial',
     '&:before': {
       content: '""',
@@ -168,7 +171,11 @@ export const Icon = styled.img`
   color: theme.color['blue-300'],
 `;
 
-export const Label = styled.p`
-  display: inline;
-  text-transform: uppercase;
-`;
+export const Label = styled.p(({ theme }) => ({
+  color: theme.color['blue-500'],
+  display: 'inline',
+  fontSize: theme.font.size.mobile.normal,
+  fontWeight: theme.font.weight.regular,
+  letterSpacing: '0.38em',
+  textTransform: 'uppercase',
+}));

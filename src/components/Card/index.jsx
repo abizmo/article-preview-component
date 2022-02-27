@@ -86,8 +86,8 @@ Card.Footer = ({ children }) => {
         >
           <Label>Share</Label>
           <Group style={{ display: 'flex', gap: '1rem' }}>
-            <Icon src="./images/icon-twitter.svg" alt="twitter" />
             <Icon src="./images/icon-facebook.svg" alt="facebook" />
+            <Icon src="./images/icon-twitter.svg" alt="twitter" />
             <Icon src="./images/icon-pinterest.svg" alt="pinterest" />
           </Group>
         </Group>
