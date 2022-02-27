@@ -65,7 +65,7 @@ Card.Group.defaultProps = {
   lgPadding: '0',
 };
 
-Card.Media = ({ src }) => <Media src={src} />;
+Card.Media = ({ src }) => <Media src={src} alt="drawers" />;
 
 Card.Media.propTypes = {
   src: PropTypes.string.isRequired,
@@ -86,9 +86,9 @@ Card.Footer = ({ children }) => {
         >
           <Label>Share</Label>
           <Group style={{ display: 'flex', gap: '1rem' }}>
-            <Icon src="./images/icon-twitter.svg" />
-            <Icon src="./images/icon-facebook.svg" />
-            <Icon src="./images/icon-pinterest.svg" />
+            <Icon src="./images/icon-twitter.svg" alt="twitter" />
+            <Icon src="./images/icon-facebook.svg" alt="facebook" />
+            <Icon src="./images/icon-pinterest.svg" alt="pinterest" />
           </Group>
         </Group>
         <Button id="back" type="button" onClick={() => setShowShare(false)}>
@@ -123,7 +123,7 @@ Card.Meta.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-Card.Avatar = ({ src }) => <Avatar src={src} />;
+Card.Avatar = ({ src }) => <Avatar src={src} alt="Michelle" />;
 
 Card.Avatar.propTypes = {
   src: PropTypes.string.isRequired,
